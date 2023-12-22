@@ -9,7 +9,7 @@ As i am from Argentina the focus will be on my country, continent
 
 link to bigquery consults https://console.cloud.google.com/bigquery?sq=684960940844:d674d18e8ad64ccabaec017a586b8c4d
 
-#Covid 19 Data Exploration
+# Covid 19 Data Exploration
 
 ### Table ordered by continent and location
 
@@ -90,7 +90,8 @@ order by Total_Death desc
 ### Now i start the vaccines exploration by joining the tables
 once joined the tables i proceed to select the data of when the countries started to vaccinate, the total vaccines orderd by continent, location and date
 
-```select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations 
+```sql
+Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations 
 FROM `mi-1er-proyecto-382317.covid.covid_deaths`  dea
 join `mi-1er-proyecto-382317.covid.covid_vacs` vac
 on dea.location = vac.location 
