@@ -88,11 +88,14 @@ order by Total_Death desc
 
 
 ### Now i start the vaccines exploration by joining the tables
+once joined the tables i proceed to select the data of when the countries started to vaccinate, the total vaccines orderd by continent, location and date
 
-```sql
-select * 
+```select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations 
 FROM `mi-1er-proyecto-382317.covid.covid_deaths`  dea
 join `mi-1er-proyecto-382317.covid.covid_vacs` vac
 on dea.location = vac.location 
 and dea.date = vac.date
+where dea.continent is not null
+and vac.new_vaccinations is not null
+order by 1,2,3
 ```
